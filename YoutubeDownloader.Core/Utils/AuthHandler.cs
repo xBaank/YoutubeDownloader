@@ -34,9 +34,6 @@ public class AuthHandler : DelegatingHandler
 
     protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
-        /*if (request.RequestUri?.AbsoluteUri.Contains("youtubei/v1") == false)
-            return base.SendAsync(request, cancellationToken);*/
-        
         var papisid = _innerHandler.CookieContainer.GetCookies(_baseUri)["__Secure-3PAPISID"] ?? _innerHandler.CookieContainer.GetCookies(_baseUri)["SAPISID"];
 
         if (papisid is null)
