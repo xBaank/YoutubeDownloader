@@ -49,6 +49,7 @@ public class AuthHandler : DelegatingHandler
         request.Headers.Add("Origin", Origin);
         request.Headers.Add("X-Origin", Origin);
         request.Headers.Add("Referer", Origin);
+        
         if (PageId is not null)
         {
             request.Headers.Add("X-Goog-AuthUser", "0");
